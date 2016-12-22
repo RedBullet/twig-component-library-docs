@@ -1,0 +1,8 @@
+{% from "components/utils/component.twig" import component %}
+
+<section class="sg-section">
+  {% if heading %}<h3 class="sg-section__heading">{{ heading }}</h3>{% endif %}
+  {% for item in components %}
+    {{ component(item.name, item.data, 'styleguide') }}
+  {% endfor %}
+</section>

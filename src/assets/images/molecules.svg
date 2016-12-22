@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="38px" height="35px" viewBox="0 0 38 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button-(large-screen)" transform="translate(-97.000000, -119.000000)">
+            <g id="Sidebar" transform="translate(-1.000000, -1.000000)">
+                <g id="Tabs" transform="translate(0.000000, 105.000000)">
+                    <g id="Molecules" transform="translate(84.000000, 0.000000)">
+                        <g id="Icon" transform="translate(16.000000, 17.000000)">
+                            <ellipse id="Oval" stroke="#E0E3EA" stroke-width="2.4" cx="8.05687204" cy="23.0989744" rx="7.94407583" ry="7.8374359"></ellipse>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="8.05687204" cy="23.0989744" rx="4.57630332" ry="4.51487179"></ellipse>
+                            <ellipse id="Oval" stroke="#E0E3EA" stroke-width="2.4" cx="17" cy="7.86923077" rx="7.94407583" ry="7.8374359"></ellipse>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="17" cy="7.86923077" rx="4.57630332" ry="4.51487179"></ellipse>
+                            <ellipse id="Oval" stroke="#E0E3EA" stroke-width="2.4" cx="25.9914692" cy="23.0989744" rx="7.94407583" ry="7.8374359"></ellipse>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="25.9914692" cy="23.0989744" rx="4.57630332" ry="4.51487179"></ellipse>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

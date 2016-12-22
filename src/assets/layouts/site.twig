@@ -1,0 +1,17 @@
+{% from "components/utils/component.twig" import component %}
+
+{% extends 'styleguide/layouts/base.twig' %}
+
+{% block base_content %}
+  <header role="mast-head" class="sg-header {{ isolated ? 'sg-header--isolated' : '' }}">
+    {{ component('molecules/sg-menu', site, 'styleguide') }}
+  </header>
+
+  {% block site_content %}
+    <main role="main" class="sg-main {{ isolated ? 'sg-main--isolated' : '' }}">
+      {% block content %}
+        Sorry, no content
+      {% endblock %}
+    </main>
+  {% endblock %}
+{% endblock %}

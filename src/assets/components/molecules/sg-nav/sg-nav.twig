@@ -1,0 +1,9 @@
+<div class="sg-nav">
+  <ul class="sg-nav__list">
+    {% for item in items %}
+      <li class="sg-nav__item">
+        <a class="sg-nav__link{{ item.name == active_component ? ' sg-nav__link--active' : '' }}" id="{{ item.name }}" href="{{ item.path }}">{{ item.label }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

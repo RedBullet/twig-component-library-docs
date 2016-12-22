@@ -1,0 +1,23 @@
+<table class="sg-properties">
+  {% if properties|length > 0 %}
+    <thead>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Optional</th>
+      <th>Description</th>
+    </thead>
+    {% for property in properties %}
+      <tr class="sg-properties__property">
+        <td class="sg-properties__property__name">{{ property.name }}</td>
+        <td class="sg-properties__property__type">{{ property.type }}</td>
+        <td class="sg-properties__property__required sg-properties__property__required--{{ property.required ? 'required' : 'optional' }}">
+          {% if not property.required %}
+            <i class="icon icon-tick"></i>
+            <span>Optional</span>
+          {% endif %}
+        </td>
+        <td class="sg-properties__property__description">{{ property.description }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>

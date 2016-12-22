@@ -1,0 +1,44 @@
+// @import 'node_modules/normalize.css/normalize';
+
+// No base element styling in the styleguide
+@import 'base/variables';
+@import 'base/icons';
+@import 'code-highlight-themes/default';
+
+@import '../components/molecules/sg-menu/sg-menu';
+@import '../components/molecules/sg-nav/sg-nav';
+@import '../components/molecules/sg-page-header/sg-page-header';
+@import '../components/molecules/sg-properties/sg-properties';
+@import '../components/molecules/sg-section/sg-section';
+@import '../components/molecules/sg-tabs/sg-tabs';
+@import '../components/molecules/sg-text/sg-text';
+@import '../components/molecules/sg-variant/sg-variant';
+
+* {
+  box-sizing: border-box;
+}
+
+.sg {
+  padding: 0;
+  margin: 0;
+}
+
+.sg-header {
+  &--isolated {
+    display: none;
+  }
+}
+
+.sg-main--isolated {
+  margin: 0 (-$spacing-horizontal-root / 2);
+}
+
+@media (min-width: map-get($bp, 'md')) {
+  .sg-main {
+    margin-left: $sg-menu-width;
+
+    &--isolated {
+      margin-left: (-$spacing-horizontal-root / 2);
+    }
+  }
+}

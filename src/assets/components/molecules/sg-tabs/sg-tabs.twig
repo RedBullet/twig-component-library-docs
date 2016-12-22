@@ -1,0 +1,23 @@
+{% from "components/utils/component.twig" import component %}
+
+<div class="sg-tabs" data-active="{{ activeComponent }}">
+  <ul data-tabs class="sg-tabs__list" id="sg-tabs">
+    {% for tab in tabs %}
+      <li class="sg-tabs__item">
+        <a data-tab href="{{ tab.path }}" class="sg-tabs__button">
+          <i class="icon icon-{{ tab.label|lower }}"></i>
+          <span>{{ tab.label }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="sg-tabs__content" data-tabs-content>
+    {% for tab in tabs %}
+      <div data-tabs-pane class="sg-tabs__pane" style="display: block" id="{{ tab.id }}">
+        {% for item in tab.components %}
+          {{ component(item.name, item.data, 'styleguide') }}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

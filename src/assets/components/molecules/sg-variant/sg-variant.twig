@@ -1,0 +1,38 @@
+{% from "components/utils/component.twig" import component %}
+
+<div class="sg-variant">
+  <h3 class="sg-variant__heading">{{ heading }}</h3>
+  {% if schema_errors %}
+    <div class="sg-variant__error">
+      <h4 class="sg-variant__error-title">Warning</h4>
+      <p class="sg-variant__error-text">The data for this variant does not pass the schema validation.</p>
+      <ul class="sg-variant__error-list">
+        {% for schema_error in schema_errors %}
+          <li class="sg-variant__error-item">
+            <h5 class="sg-variant__error-item-title">{{ schema_error.property }}</h5>
+            <p class="sg-variant__error-item-text">{{ schema_error.message }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if name %}
+    <div class="sg-variant__component">{{ component(name, data) }}</div>
+  {% endif %}
+
+  {% set parts = name|split('/') %}
+  {% set path = name ~ "/" ~ parts[parts|length - 1] ~ ".twig" %}
+  <div class="sg-variant__code sg-variant__code--html" id="variant-html-{{ file_id }}">
+    <pre><code class="html">{% filter escape %}{{ component(name, data) }}{% endfilter %}</code></pre>
+  </div>
+  <div class="sg-variant__code sg-variant__code--twig" id="variant-twig-{{ file_id }}">
+    <pre><code class="twig">{% filter escape %}{{ source(path, ignore_missing) }}{% endfilter %}</code></pre>
+  </div>
+  <div class="sg-variant__code sg-variant__code--json" id="variant-json-{{ file_id }}">
+    <pre><code class="json">{% filter escape %}{{ data_raw }}{% endfilter %}</code></pre>
+  </div>
+  <a href="#variant-twig-{{ file_id }}" class="sg-variant__trigger">Twig</a>
+  <a href="#variant-html-{{ file_id }}" class="sg-variant__trigger">HTML</a>
+  <a href="#variant-json-{{ file_id }}" class="sg-variant__trigger">Data</a>
+</div>

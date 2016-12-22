@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button-(large-screen)" transform="translate(-743.000000, -974.000000)" fill="#60CD93">
+            <g id="Schema" transform="translate(300.000000, 842.000000)">
+                <g id="Group-2" transform="translate(0.000000, 108.000000)">
+                    <path d="M452.25175,25.0296373 L448.53875,31.7116373 L446.41375,29.5866373 C445.63275,28.8056373 444.36675,28.8056373 443.58575,29.5866373 C442.80475,30.3676373 442.80475,31.6336373 443.58575,32.4146373 L447.58575,36.4146373 C447.96375,36.7936373 448.47375,37.0016373 448.99975,37.0016373 C449.09175,37.0016373 449.18475,36.9956373 449.27675,36.9816373 C449.89775,36.8946373 450.44275,36.5216373 450.74775,35.9726373 L455.74775,26.9726373 C456.28475,26.0066373 455.93675,24.7896373 454.97175,24.2526373 C454.00475,23.7146373 452.78675,24.0646373 452.25175,25.0296373 Z" id="Tick"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

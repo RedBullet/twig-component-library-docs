@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="34px" viewBox="0 0 26 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button-(large-screen)" transform="translate(-382.000000, -592.000000)" fill="#E0E3EA">
+            <g id="Output" transform="translate(300.000000, 212.000000)">
+                <g id="Outline" transform="translate(0.000000, 315.000000)">
+                    <g id="Output" transform="translate(0.000000, 50.000000)">
+                        <g id="Tabs">
+                            <g id="Tablet" transform="translate(63.000000, 0.000000)">
+                                <path d="M35.4801761,15 L26.4512228,15 L20.2884303,15 C19.6521684,15 19,15.7645413 19,16.4031581 L19,47.5638617 C19,48.2054767 19.6521684,49 20.2884303,49 L26.4512228,49 L35.479182,49 L43.6409804,49 C44.2782364,49 44.9999959,48.2054767 44.9999959,47.5638617 L44.9999959,16.4031581 C45.0019842,15.7645413 44.2782364,15 43.6419745,15 L35.4801761,15 Z M31.0007561,47 C29.8967864,47 29,46.1017013 29,44.9992439 C29,43.8967864 29.8967864,43 31.0007561,43 C32.1032136,43 33,43.8982987 33,44.9992439 C33,46.1017013 32.1032136,47 31.0007561,47 L31.0007561,47 Z M42,41 L22,41 L22.0791587,18 L41.9988692,18 L41.9988692,41 L42,41 Z" id="Icon"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

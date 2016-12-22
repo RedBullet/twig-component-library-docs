@@ -1,0 +1,12 @@
+.sg-section {
+  background: $body-background;
+  padding: $spacing-vertical-root / 2 $spacing-horizontal-root;
+
+  &__heading {
+    color: $heading-color;
+    font-family: $heading-font-family;
+    font-size: 1.25em;
+    font-weight: $heading-font-weight;
+    margin: 0 0 $spacing-vertical;
+  }
+}

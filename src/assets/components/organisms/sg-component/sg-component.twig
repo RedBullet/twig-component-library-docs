@@ -1,0 +1,9 @@
+{% from "components/utils/component.twig" import component %}
+
+<article class="sg-component">
+  {{ component('molecules/sg-page-header', page_header, 'styleguide') }}
+
+  {% for section in sections %}
+    {{ component('molecules/sg-section', section, 'styleguide') }}
+  {% endfor %}
+</article>

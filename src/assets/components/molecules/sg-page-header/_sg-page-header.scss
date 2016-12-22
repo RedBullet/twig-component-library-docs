@@ -1,0 +1,45 @@
+.sg-page-header {
+  background: $sg-page-header-background;
+  padding: $spacing-vertical-root $spacing-horizontal-root $spacing-vertical-root / 2;
+
+  &__sub-heading {
+    color: $sg-page-header-sub-heading-color;
+    font-family: $heading-font-family;
+    font-size: $sg-page-header-sub-heading-font-size;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    color: $sg-page-header-heading-color;
+    font-family: $heading-font-family;
+    font-size: $sg-page-header-heading-font-size;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin: 0;
+    padding: 0;
+    text-indent: -.075em;
+    text-transform: capitalize;
+  }
+
+  &__link {
+    color: inherit;
+    display: none;
+    float: right;
+    font-size: .9em;
+    text-decoration: none;
+
+    &::after {
+      content: "\2192";
+    }
+  }
+
+  &:hover {
+    .sg-page-header__link {
+      display: block;
+    }
+  }
+}

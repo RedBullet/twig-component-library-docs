@@ -1,0 +1,48 @@
+{
+  "name": "twig-pattern-docs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib && mkdir lib",
+    "js": "babel src/index.js --out-file lib/index.js && babel src/helpers.js --out-file lib/helpers.js && mkdir \"lib/assets/scripts\" && browserify src/assets/scripts/main.js -o lib/assets/scripts/main.js -t [ babelify --presets [ es2015 react ] ]",
+    "styles": "mkdir \"lib/assets/styles\" && node-sass src/assets/styles/ -o lib/assets/styles/",
+    "images": "cp -R src/assets/images/ lib/assets/images/",
+    "fonts": "cp -R src/assets/fonts/ lib/assets/fonts/",
+    "layouts": "cp -R src/assets/layouts/ lib/assets/layouts/",
+    "components": "cp -R src/assets/components/ lib/assets/components/",
+    "compile": "npm run clean && npm run js && npm run styles && npm run fonts && npm run images && npm run layouts && npm run components",
+    "prepublish": "npm run compile"
+  },
+  "private": true,
+  "author": "Red Bullet",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.10.4",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-2": "^6.18.0",
+    "babelify": "^7.3.0",
+    "closest": "0.0.1",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.0.1",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.1",
+    "highlight.js": "^9.6.0",
+    "lodash": "^4.0.1",
+    "marked": "^0.3.6",
+    "node-sass": "^4.1.1",
+    "rimraf": "^2.5.4",
+    "twig": "^0.10.3",
+    "validate-commit-msg": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=6.3.0"
+  }
+}

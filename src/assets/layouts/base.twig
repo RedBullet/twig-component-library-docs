@@ -1,0 +1,27 @@
+<!doctype html>
+{% block base_html %}
+<html class="no-js">
+{% endblock %}
+{% block base_head %}
+<head>
+    <meta charset="utf-8" />
+    <title>Twig Pattern Library</title>
+    <meta name="description" content="Pattern library and styleguide">
+    {% block base_stylesheets %}
+      <link rel="stylesheet" href="../styles/styleguide.css" type="text/css" media="screen" />
+      {% block base_stylesheets_include %}{% endblock %}
+    {% endblock %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+{% endblock %}
+{% block base_body %}
+<body class="sg">
+  {% block base_content %}{% endblock %}
+  {% block base_scripts %}
+    {% block base_scripts_include %}{% endblock %}
+  {% endblock %}
+</body>
+{% endblock %}
+</html>

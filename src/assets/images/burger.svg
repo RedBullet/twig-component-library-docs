@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="20px" viewBox="0 0 25 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Hamburger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button" transform="translate(-275.000000, -22.000000)" fill="#758098">
+            <g id="Masthead">
+                <path d="M275,24 C275,22.8954305 275.889763,22 277.003595,22 L297.996405,22 C299.10296,22 300,22.8877296 300,24 C300,25.1045695 299.110237,26 297.996405,26 L277.003595,26 C275.89704,26 275,25.1122704 275,24 L275,24 L275,24 Z M275,32 C275,30.8954305 275.889763,30 277.003595,30 L297.996405,30 C299.10296,30 300,30.8877296 300,32 C300,33.1045695 299.110237,34 297.996405,34 L277.003595,34 C275.89704,34 275,33.1122704 275,32 L275,32 L275,32 Z M275,40 C275,38.8954305 275.889763,38 277.003595,38 L297.996405,38 C299.10296,38 300,38.8877296 300,40 C300,41.1045695 299.110237,42 297.996405,42 L277.003595,42 C275.89704,42 275,41.1122704 275,40 L275,40 L275,40 Z" id="Hamburger"></path>
+            </g>
+        </g>
+    </g>
+</svg>

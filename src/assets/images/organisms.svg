@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="31px" viewBox="0 0 41 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button-(large-screen)" transform="translate(-160.000000, -121.000000)">
+            <g id="Sidebar" transform="translate(-1.000000, -1.000000)">
+                <g id="Tabs" transform="translate(0.000000, 105.000000)">
+                    <g id="Organisms" transform="translate(149.000000, 0.000000)">
+                        <g id="Icon" transform="translate(13.000000, 18.000000)">
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="4.5" cy="4.5" r="4.5"></circle>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="4.5" cy="4.5" rx="2.5" ry="2.5"></ellipse>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="14.5" cy="4.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="14.5" cy="4.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="24.5" cy="4.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="24.5" cy="4.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="34.5" cy="4.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="34.5" cy="4.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="4.5" cy="14.5" r="4.5"></circle>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="4.5" cy="14.5" rx="2.5" ry="2.5"></ellipse>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="14.5" cy="14.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="14.5" cy="14.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="24.5" cy="14.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="24.5" cy="14.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="34.5" cy="14.5" r="4.5"></circle>
+                            <path d="M34.5,17 C35.8807119,17 37,15.8807119 37,14.5 C37,13.1192881 35.8807119,12 34.5,12 C33.1192881,12 32,13.1192881 32,14.5 C32,15.8807119 33.1192881,17 34.5,17 Z" id="Oval" fill="#E0E3EA"></path>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="4.5" cy="24.5" r="4.5"></circle>
+                            <ellipse id="Oval" fill="#E0E3EA" cx="4.5" cy="24.5" rx="2.5" ry="2.5"></ellipse>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="14.5" cy="24.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="14.5" cy="24.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="24.5" cy="24.5" r="4.5"></circle>
+                            <circle id="Oval" fill="#E0E3EA" cx="24.5" cy="24.5" r="2.5"></circle>
+                            <circle id="Oval" stroke="#E0E3EA" stroke-width="1.76" cx="34.5" cy="24.5" r="4.5"></circle>
+                            <path d="M34.5,27 C35.8807119,27 37,25.8807119 37,24.5 C37,23.1192881 35.8807119,22 34.5,22 C33.1192881,22 32,23.1192881 32,24.5 C32,25.8807119 33.1192881,27 34.5,27 Z" id="Oval" fill="#E0E3EA"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
