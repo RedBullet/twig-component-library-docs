@@ -4,6 +4,8 @@ import marked from 'marked';
 import Twig from 'twig';
 import * as helpers from './helpers';
 
+Twig.cache(false);
+
 let config = {
   styleguideSrc: 'node_modules/twig-pattern-docs/lib/assets',
 };
