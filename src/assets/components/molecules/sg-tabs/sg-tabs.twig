@@ -13,7 +13,7 @@
   </ul>
   <div class="sg-tabs__content" data-tabs-content>
     {% for tab in tabs %}
-      <div data-tabs-pane class="sg-tabs__pane" style="display: block" id="{{ tab.id }}">
+      <div data-tabs-pane class="sg-tabs__pane" id="{{ tab.id }}">
         {% for item in tab.components %}
           {{ component(item.name, item.data, 'styleguide') }}
         {% endfor %}

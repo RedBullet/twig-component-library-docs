@@ -26,7 +26,7 @@ function getProperties(src) {
   return properties;
 }
 
-function getVariants(src, name) {
+function getVariants(src, name, twig) {
   const files = helpers.getFiles(src);
   const fileId = helpers.removeExt(name).replace('/', '-');
 
@@ -35,6 +35,7 @@ function getVariants(src, name) {
     heading: helpers.removeExt(file),
     data: helpers.getJson(`${src}/${file}`),
     data_raw: helpers.getFile(`${src}/${file}`),
+    twig_raw: twig,
     file_id: fileId,
   }));
 }
@@ -49,7 +50,7 @@ function getComponent(src, name, type) {
     name,
     type,
     properties: getProperties(`${src}/${name}.schema.json`),
-    variants: getVariants(`${src}/data`, `${type}/${name}`),
+    variants: getVariants(`${src}/data`, `${type}/${name}`, helpers.getFile(`${src}/${name}.twig`)),
     docs: getDocs(`${src}/Readme.md`),
   };
 }
@@ -135,7 +136,7 @@ function getTabs(types) {
   return types.map((type) => ({
     id: type.name,
     label: type.name,
-    path: `index.html#${type.name}`,
+    path: `#${type.name}`,
     components: [
       {
         name: 'molecules/sg-nav',

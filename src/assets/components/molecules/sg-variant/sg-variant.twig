@@ -22,15 +22,15 @@
   {% endif %}
 
   {% set parts = name|split('/') %}
-  {% set path = name ~ "/" ~ parts[parts|length - 1] ~ ".twig" %}
+  {% set path = "components/" ~ name ~ "/" ~ parts[parts|length - 1] ~ ".twig" %}
   <div class="sg-variant__code sg-variant__code--html" id="variant-html-{{ file_id }}">
-    <pre><code class="html">{% filter escape %}{{ component(name, data) }}{% endfilter %}</code></pre>
+<pre><code class="html">{% filter escape %}{{ component(name, data) }}{% endfilter %}</code></pre>
   </div>
   <div class="sg-variant__code sg-variant__code--twig" id="variant-twig-{{ file_id }}">
-    <pre><code class="twig">{% filter escape %}{{ source(path, ignore_missing) }}{% endfilter %}</code></pre>
+<pre><code class="twig">{% filter escape %}{{ twig_raw }}{% endfilter %}</code></pre>
   </div>
   <div class="sg-variant__code sg-variant__code--json" id="variant-json-{{ file_id }}">
-    <pre><code class="json">{% filter escape %}{{ data_raw }}{% endfilter %}</code></pre>
+<pre><code class="json">{% filter escape %}{{ data_raw }}{% endfilter %}</code></pre>
   </div>
   <a href="#variant-twig-{{ file_id }}" class="sg-variant__trigger">Twig</a>
   <a href="#variant-html-{{ file_id }}" class="sg-variant__trigger">HTML</a>

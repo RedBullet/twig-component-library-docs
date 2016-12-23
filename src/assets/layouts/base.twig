@@ -8,7 +8,8 @@
     <title>Twig Pattern Library</title>
     <meta name="description" content="Pattern library and styleguide">
     {% block base_stylesheets %}
-      <link rel="stylesheet" href="../styles/styleguide.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="docassets/styles/main.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="styles/main.css" type="text/css" media="screen" />
       {% block base_stylesheets_include %}{% endblock %}
     {% endblock %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -20,6 +21,7 @@
 <body class="sg">
   {% block base_content %}{% endblock %}
   {% block base_scripts %}
+    <script src="docassets/scripts/main.js"></script>
     {% block base_scripts_include %}{% endblock %}
   {% endblock %}
 </body>
