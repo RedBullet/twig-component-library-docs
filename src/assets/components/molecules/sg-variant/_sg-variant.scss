@@ -12,6 +12,7 @@
     font-size: 1.25em;
     font-weight: $heading-font-weight;
     margin: 0 0 $spacing-vertical;
+    text-transform: capitalize;
   }
 
   &__error {
@@ -64,6 +65,7 @@
   &__component {
     background: $sg-variant-background;
     border: $sg-variant-border;
+    overflow: hidden;
     padding: $spacing-vertical-lg $spacing-horizontal-lg;
   }
 
