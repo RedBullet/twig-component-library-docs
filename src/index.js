@@ -64,6 +64,11 @@ function outputPage(data, name, template, tabs = []) {
   return Twig.renderFile(templatePath, {
     settings: {
       views: `${config.src}`,
+      'twig options': {
+        namespaces: {
+          styleguide: `${config.styleguideSrc}/`,
+        }
+      }
     },
     site: {
       name: 'Pattern Library',

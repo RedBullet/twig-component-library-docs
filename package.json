@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf lib && mkdir lib",
+    "clean": "rimraf lib && mkdir lib && mkdir \"lib/assets\"",
     "js": "babel src/index.js --out-file lib/index.js && babel src/helpers.js --out-file lib/helpers.js && mkdir \"lib/assets/scripts\" && browserify src/assets/scripts/main.js -o lib/assets/scripts/main.js -t [ babelify --presets [ es2015 react ] ]",
     "styles": "mkdir \"lib/assets/styles\" && node-sass src/assets/styles/ -o lib/assets/styles/",
     "images": "cp -R src/assets/images/ lib/assets/images/",

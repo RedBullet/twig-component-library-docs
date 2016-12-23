@@ -1,0 +1,7 @@
+{% macro component(type, data, namespace) %}
+  {% set parts = type|split('/') %}
+  {% if namespace %}
+    {% set namespace = namespace ~ "::" %}
+  {% endif %}
+  {% include namespace ~ "components/" ~ type ~ "/" ~ parts[parts|length - 1] ~ ".twig" with data only %}
+{% endmacro %}
