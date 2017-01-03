@@ -1,4 +1,4 @@
 # Twig Pattern Docs
 
 ## Introduction
-Module that produces docs for our Twig Pattern Library. Work in progress. More docs soon.
+[WIP] Produces docs for our Twig Component Library. More docs soon.

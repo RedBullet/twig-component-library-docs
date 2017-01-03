@@ -74,7 +74,7 @@ function outputPage(data, name, template, tabs = []) {
       },
     },
     site: {
-      name: 'Pattern Library',
+      name: 'Component Library',
       tabs,
     },
     data,
