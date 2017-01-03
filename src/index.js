@@ -7,6 +7,7 @@ Twig.cache(false);
 
 let config = {
   styleguideSrc: 'node_modules/twig-pattern-docs/lib/assets',
+  excludedTypes: ['utils'],
 };
 
 function getProperties(src) {
@@ -164,10 +165,16 @@ function componentsFromTypes(types) {
   return components;
 }
 
+function getTypes(src, excludedTypes = []) {
+  const types = helpers.getFolders(src);
+
+  return types.filter((type) => excludedTypes.find((excludedType) => excludedType !== type));
+}
+
 export default (settings) => {
   config = Object.assign(config, settings);
 
-  const types = helpers.getFolders(`${config.src}/components`);
+  const types = getTypes(`${config.src}/components`, config.excludedTypes);
   const typesWithComponents = types.map((type) => ({
     name: type,
     components: getComponents(`${config.src}/components/${type}`, type),
