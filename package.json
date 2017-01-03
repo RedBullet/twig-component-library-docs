@@ -33,7 +33,6 @@
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.0.1",
     "event-stream": "^3.3.2",
-    "gulp": "^3.9.1",
     "highlight.js": "^9.6.0",
     "lodash": "^4.0.1",
     "marked": "^0.3.6",

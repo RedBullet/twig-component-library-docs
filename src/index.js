@@ -1,4 +1,3 @@
-import gulp from 'gulp';
 import fs from 'fs';
 import marked from 'marked';
 import Twig from 'twig';
@@ -70,8 +69,8 @@ function outputPage(data, name, template, tabs = []) {
       'twig options': {
         namespaces: {
           styleguide: `${config.styleguideSrc}/`,
-        }
-      }
+        },
+      },
     },
     site: {
       name: 'Pattern Library',
