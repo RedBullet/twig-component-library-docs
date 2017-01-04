@@ -3,12 +3,12 @@
 {% extends "styleguide::layouts/base.twig" %}
 
 {% block base_content %}
-  <header role="mast-head" class="sg-header {{ isolated ? 'sg-header--isolated' : '' }}">
+  <header role="mast-head" class="sg-header">
     {{ component('molecules/sg-menu', site, 'styleguide') }}
   </header>
 
   {% block site_content %}
-    <main role="main" class="sg-main {{ isolated ? 'sg-main--isolated' : '' }}">
+    <main role="main" class="sg-main">
       {% block content %}
         Sorry, no content
       {% endblock %}

@@ -33,13 +33,17 @@
     text-decoration: none;
 
     &::after {
-      content: "\2192";
+      content: '\2192';
     }
   }
 
   &:hover {
     .sg-page-header__link {
       display: block;
+    }
+
+    .sg-page-header__link--hide {
+      display: none;
     }
   }
 }

@@ -7,7 +7,7 @@ import * as helpers from './helpers';
 Twig.cache(false);
 
 let config = {
-  styleguideSrc: `${path.dirname(__filename)}/assets`,
+  assetSrc: `${path.dirname(__filename)}/assets`,
   excludedTypes: ['utils'],
 };
 
@@ -64,13 +64,13 @@ function getComponents(src, type) {
 }
 
 function outputPage(data, name, template, tabs = []) {
-  const templatePath = `${config.styleguideSrc}/components/templates/${template}/${template}.twig`;
+  const templatePath = `${config.assetSrc}/components/templates/${template}/${template}.twig`;
   return Twig.renderFile(templatePath, {
     settings: {
       views: `${config.src}`,
       'twig options': {
         namespaces: {
-          styleguide: `${config.styleguideSrc}/`,
+          styleguide: `${config.assetSrc}/`,
         },
       },
     },
@@ -90,6 +90,7 @@ function shapeComponentData(component) {
     page_header: {
       heading: component.name,
       sub_heading: component.type,
+      isolated_link: `${component.name}.html#isolated`,
     },
     sections: [
       {

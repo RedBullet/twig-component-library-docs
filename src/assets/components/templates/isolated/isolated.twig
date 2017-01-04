@@ -1,0 +1,7 @@
+{% from "styleguide::components/utils/component.twig" import component %}
+
+{% extends "styleguide::layouts/site.twig" %}
+
+{% block content %}
+  {{ component('organisms/sg-component', data, 'styleguide') }}
+{% endblock %}
