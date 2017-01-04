@@ -1,6 +1,6 @@
 {
   "name": "twig-component-library-docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "[WIP] Produces docs for Twig Component Library",
   "main": "lib/index.js",
   "scripts": {
