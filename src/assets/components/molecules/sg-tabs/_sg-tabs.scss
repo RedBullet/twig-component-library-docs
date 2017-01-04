@@ -10,14 +10,18 @@
     float: right;
     list-style-type: none;
     margin: 0 $spacing-horizontal-sm 0 0;
-    //overflow: hidden;
     padding: 0;
+
+    @media (min-width: map-get($bp, 'md')) {
+      float: left;
+      margin: 0 $spacing-horizontal;
+    }
   }
 
   &__item {
+    background: $sg-tabs-background;
     border: $sg-tabs-border-width $border-style $sg-tabs-border-color;
     border-width: $sg-tabs-border-width $sg-tabs-border-width 0;
-    background: $sg-tabs-background;
     color: $sg-tabs-icon-color;
     float: left;
 
@@ -58,6 +62,10 @@
     img {
       display: block;
     }
+
+    .sg-tabs__item--active & {
+      color: $sg-tabs-icon-color-active;
+    }
   }
 
   &__content {
@@ -88,10 +96,5 @@
 
   @media (min-width: map-get($bp, 'md')) {
     position: static;
-
-    &__list {
-      margin-right: $spacing-horizontal;
-    }
   }
 }
-

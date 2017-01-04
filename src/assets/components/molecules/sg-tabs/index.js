@@ -78,6 +78,12 @@ export default function init() {
     });
   }
 
+  const activeTab = document.querySelector(`.sg-tabs__button[href="${location.hash}"]`);
+
+  if (activeTab) {
+    activeTab.click();
+  }
+
   window.addEventListener('resize', testResize);
   testResize();
 }

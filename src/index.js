@@ -148,7 +148,7 @@ function getTabs(types) {
           items: type.components.map((component) => ({
             name: component.name,
             label: component.name,
-            path: `${component.name}.html`,
+            path: `${component.name}.html#${type.name}`,
             components: [],
           })),
         },

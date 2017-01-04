@@ -98,14 +98,14 @@ $sg-menu-logo-font-weight: $heading-font-weight;
 $sg-menu-border: $border-width $border-style $border-color;
 
 // Sidebar width
-$sg-menu-width: 15em;
+$sg-menu-width: 15.37em;
 
 
 // Tab navigation in menu sg-tabs
 // ==================================================
 
 $sg-tabs-icon-color: darken($color-grey, 5%);
-$sg-tabs-icon-color-active: darken($color-grey, 5%);
+$sg-tabs-icon-color-active: darken($color-grey, 25%);
 
 $sg-tabs-background: transparent;
 $sg-tabs-background-active: $color-background-light;
