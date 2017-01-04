@@ -7,6 +7,7 @@ import * as helpers from './helpers';
 Twig.cache(false);
 
 let config = {
+  name: 'Component Library',
   assetSrc: `${path.dirname(__filename)}/assets`,
   excludedTypes: ['utils'],
 };
@@ -75,7 +76,7 @@ function outputPage(data, name, template, tabs = []) {
       },
     },
     site: {
-      name: 'Component Library',
+      name: config.name,
       tabs,
     },
     data,
