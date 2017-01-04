@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import marked from 'marked';
 import Twig from 'twig';
 import * as helpers from './helpers';
@@ -6,7 +7,7 @@ import * as helpers from './helpers';
 Twig.cache(false);
 
 let config = {
-  styleguideSrc: 'node_modules/twig-pattern-docs/lib/assets',
+  styleguideSrc: `${path.dirname(__filename)}/assets`,
   excludedTypes: ['utils'],
 };
 
