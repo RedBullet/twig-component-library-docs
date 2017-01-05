@@ -14,7 +14,7 @@
 
     @media (min-width: map-get($bp, 'md')) {
       float: left;
-      margin: 0 $spacing-horizontal;
+      margin: 0 ($spacing-horizontal * .75);
     }
   }
 
