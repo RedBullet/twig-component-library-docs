@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { humanize } from 'underscore.string';
 
 export function removeExt(string) {
   const parts = string.split('.');
@@ -50,4 +51,19 @@ export function getJson(src) {
   }
 
   return undefined;
+}
+
+export function removePrefix(string) {
+  if (string.indexOf('_') > -1) {
+    const split = string.split('_');
+    return split[1];
+  }
+
+  return string;
+}
+
+export function formatVariantHeading(string) {
+  const withoutExt = removeExt(string);
+  const withoutPrefix = removePrefix(withoutExt);
+  return humanize(withoutPrefix);
 }

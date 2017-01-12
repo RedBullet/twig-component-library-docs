@@ -36,7 +36,7 @@ function getVariants(src, name, twig) {
 
   return files.map((file) => ({
     name,
-    heading: helpers.removeExt(file),
+    heading: helpers.formatVariantHeading(file),
     data: helpers.getJson(`${src}/${file}`),
     data_raw: helpers.getFile(`${src}/${file}`),
     twig_raw: twig,
