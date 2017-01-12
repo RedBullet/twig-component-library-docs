@@ -30,6 +30,8 @@
 }
 
 .sg-main {
+  max-width: $container-max-width;
+
   @media (min-width: map-get($bp, 'md')) {
     margin-left: $sg-menu-width;
 
