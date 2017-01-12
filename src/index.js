@@ -87,7 +87,7 @@ function outputPage(data, name, template, tabs = []) {
 }
 
 function shapeComponentData(component) {
-  return {
+  const data = {
     page_header: {
       heading: component.name,
       sub_heading: component.type,
@@ -113,19 +113,24 @@ function shapeComponentData(component) {
           },
         ],
       },
-      {
-        heading: 'Documentation',
-        components: [
-          {
-            name: 'molecules/sg-text',
-            data: {
-              text: component.docs,
-            },
-          },
-        ],
-      },
     ],
   };
+
+  if (component.docs) {
+    data.sections.push({
+      heading: 'Documentation',
+      components: [
+        {
+          name: 'molecules/sg-text',
+          data: {
+            text: component.docs,
+          },
+        },
+      ],
+    });
+  }
+
+  return data;
 }
 
 function generateSinglePages(components, tabs) {
