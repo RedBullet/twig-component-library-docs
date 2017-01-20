@@ -1,0 +1,7 @@
+{% from "styleguide::components/utils/component.twig" import component %}
+
+{% extends "styleguide::layouts/base.twig" %}
+
+{% block base_content %}
+  {{ component(name, data) }}
+{% endblock %}

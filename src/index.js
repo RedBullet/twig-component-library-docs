@@ -3,6 +3,7 @@ import path from 'path';
 import marked from 'marked';
 import Twig from 'twig';
 import * as helpers from './helpers';
+import { slugify, humanize } from 'underscore.string';
 
 Twig.cache(false);
 
@@ -36,11 +37,13 @@ function getVariants(src, name, twig) {
 
   return files.map((file) => ({
     name,
-    heading: helpers.formatVariantHeading(file),
+    heading: humanize(helpers.formatVariantFile(file)),
     data: helpers.getJson(`${src}/${file}`),
     data_raw: helpers.getFile(`${src}/${file}`),
     twig_raw: twig,
     file_id: fileId,
+    slug: `${slugify(helpers.formatVariantFile(file))}`,
+    isolated_link: `${name}/${slugify(helpers.formatVariantFile(file))}.html`,
   }));
 }
 
@@ -54,7 +57,11 @@ function getComponent(src, name, type) {
     name,
     type,
     properties: getProperties(`${src}/${name}.schema.json`),
-    variants: getVariants(`${src}/data`, `${type}/${name}`, helpers.getFile(`${src}/${name}.twig`)),
+    variants: getVariants(
+      `${src}/data`,
+      `${type}/${name}`,
+      helpers.getFile(`${src}/${name}.twig`)
+    ),
     docs: getDocs(`${src}/Readme.md`),
   };
 }
@@ -81,7 +88,7 @@ function outputPage(data, name, template, tabs = []) {
     },
     data,
   }, (err, html) => {
-    helpers.createDirIfNotExist(config.dest);
+    helpers.createDirIfNotExist(`${config.dest}/${name}`);
     fs.writeFileSync(`${config.dest}/${name}.html`, html);
   });
 }
@@ -131,6 +138,19 @@ function shapeComponentData(component) {
   }
 
   return data;
+}
+
+function shapeVariantData(variant) {
+  return {
+    name: variant.name,
+    data: variant.data,
+    slug: variant.slug,
+  };
+}
+
+function generateVariantPages(components) {
+  components.map((component) => component.variants.map(
+    (variant) => outputPage(shapeVariantData(variant), `${variant.name}/${variant.slug}`, 'variant')));
 }
 
 function generateSinglePages(components, tabs) {
@@ -191,4 +211,5 @@ export default (settings) => {
   const tabs = getTabs(typesWithComponents);
   generateIndexPage(componentsFromTypes(typesWithComponents), tabs);
   generateSinglePages(componentsFromTypes(typesWithComponents), tabs);
+  generateVariantPages(componentsFromTypes(typesWithComponents));
 };

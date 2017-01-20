@@ -8,11 +8,34 @@
 
   &__heading {
     color: $heading-color;
+    float: left;
     font-family: $heading-font-family;
     font-size: 1.25em;
     font-weight: $heading-font-weight;
     margin: 0 0 $spacing-vertical;
     text-transform: capitalize;
+  }
+
+  &__isolated-link {
+    color: inherit;
+    display: none;
+    float: right;
+    font-size: .9em;
+    text-decoration: none;
+
+    &::after {
+      content: '\2192';
+    }
+  }
+
+  &:hover {
+    .sg-variant__isolated-link {
+      display: block;
+    }
+
+    .sg-variant__isolated-link--hide {
+      display: none;
+    }
   }
 
   &__error {
@@ -67,6 +90,7 @@
     border: $sg-variant-border;
     overflow: hidden;
     padding: $spacing-vertical-lg $spacing-horizontal-lg;
+    width: 100%;
   }
 
   &__code {
