@@ -43,7 +43,7 @@ function getVariants(src, name, twig) {
     twig_raw: twig,
     file_id: fileId,
     slug: `${slugify(helpers.formatVariantFile(file))}`,
-    isolated_link: `${name}/${slugify(helpers.formatVariantFile(file))}.html`,
+    isolated_link: `/${name}/${slugify(helpers.formatVariantFile(file))}.html`,
   }));
 }
 
@@ -71,7 +71,7 @@ function getComponents(src, type) {
   return components.map((component) => getComponent(`${src}/${component}`, component, type));
 }
 
-function outputPage(data, name, template, tabs = []) {
+function outputPage(data, filename, template, folder = '', tabs = []) {
   const templatePath = `${config.assetSrc}/components/templates/${template}/${template}.twig`;
   return Twig.renderFile(templatePath, {
     settings: {
@@ -88,8 +88,9 @@ function outputPage(data, name, template, tabs = []) {
     },
     data,
   }, (err, html) => {
-    helpers.createDirIfNotExist(`${config.dest}/${name}`);
-    fs.writeFileSync(`${config.dest}/${name}.html`, html);
+    const dest = `${config.dest}/${folder}`;
+    helpers.createDirIfNotExist(dest);
+    fs.writeFileSync(`${dest}/${filename}.html`, html);
   });
 }
 
@@ -150,16 +151,33 @@ function shapeVariantData(variant) {
 
 function generateVariantPages(components) {
   components.map((component) => component.variants.map(
-    (variant) => outputPage(shapeVariantData(variant), `${variant.name}/${variant.slug}`, 'variant')));
+    (variant) => outputPage(
+      shapeVariantData(variant),
+      variant.slug,
+      'variant',
+      variant.name
+    )
+  ));
 }
 
 function generateSinglePages(components, tabs) {
-  components.map((component) =>
-    outputPage(shapeComponentData(component), component.name, 'single', tabs));
+  components.map((component) => outputPage(
+    shapeComponentData(component),
+    'index',
+    'single',
+    `${component.type}/${component.name}`,
+    tabs
+  ));
 }
 
 function generateIndexPage(components, tabs) {
-  outputPage(components.map((component) => shapeComponentData(component)), 'index', 'all', tabs);
+  outputPage(
+    components.map((component) => shapeComponentData(component)),
+    'index',
+    'all',
+    '',
+    tabs
+  );
 }
 
 function getTabs(types) {
@@ -174,7 +192,7 @@ function getTabs(types) {
           items: type.components.map((component) => ({
             name: component.name,
             label: component.name,
-            path: `${component.name}.html#${type.name}`,
+            path: `/${type.name}/${component.name}/index.html#${type.name}`,
             components: [],
           })),
         },
