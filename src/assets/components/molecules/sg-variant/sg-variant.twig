@@ -2,20 +2,7 @@
 
 <div class="sg-variant">
   <h3 class="sg-variant__heading">{{ heading }}</h3>
-  {% if schema_errors %}
-    <div class="sg-variant__error">
-      <h4 class="sg-variant__error-title">Warning</h4>
-      <p class="sg-variant__error-text">The data for this variant does not pass the schema validation.</p>
-      <ul class="sg-variant__error-list">
-        {% for schema_error in schema_errors %}
-          <li class="sg-variant__error-item">
-            <h5 class="sg-variant__error-item-title">{{ schema_error.property }}</h5>
-            <p class="sg-variant__error-item-text">{{ schema_error.message }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endif %}
+  <a href="{{ isolated_link }}" class="sg-variant__isolated-link" target="_blank">Open isolated</a>
 
   {% if name %}
     <div class="sg-variant__component">{{ component(name, data) }}</div>

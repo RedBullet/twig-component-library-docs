@@ -3,6 +3,7 @@ import path from 'path';
 import marked from 'marked';
 import Twig from 'twig';
 import * as helpers from './helpers';
+import { slugify, humanize } from 'underscore.string';
 
 Twig.cache(false);
 
@@ -36,11 +37,13 @@ function getVariants(src, name, twig) {
 
   return files.map((file) => ({
     name,
-    heading: helpers.formatVariantHeading(file),
+    heading: humanize(helpers.formatVariantFile(file)),
     data: helpers.getJson(`${src}/${file}`),
     data_raw: helpers.getFile(`${src}/${file}`),
     twig_raw: twig,
     file_id: fileId,
+    slug: `${slugify(helpers.formatVariantFile(file))}`,
+    isolated_link: `/${name}/${slugify(helpers.formatVariantFile(file))}.html`,
   }));
 }
 
@@ -54,7 +57,11 @@ function getComponent(src, name, type) {
     name,
     type,
     properties: getProperties(`${src}/${name}.schema.json`),
-    variants: getVariants(`${src}/data`, `${type}/${name}`, helpers.getFile(`${src}/${name}.twig`)),
+    variants: getVariants(
+      `${src}/data`,
+      `${type}/${name}`,
+      helpers.getFile(`${src}/${name}.twig`)
+    ),
     docs: getDocs(`${src}/Readme.md`),
   };
 }
@@ -64,7 +71,7 @@ function getComponents(src, type) {
   return components.map((component) => getComponent(`${src}/${component}`, component, type));
 }
 
-function outputPage(data, name, template, tabs = []) {
+function outputPage(data, filename, template, folder = '', tabs = []) {
   const templatePath = `${config.assetSrc}/components/templates/${template}/${template}.twig`;
   return Twig.renderFile(templatePath, {
     settings: {
@@ -81,8 +88,9 @@ function outputPage(data, name, template, tabs = []) {
     },
     data,
   }, (err, html) => {
-    helpers.createDirIfNotExist(config.dest);
-    fs.writeFileSync(`${config.dest}/${name}.html`, html);
+    const dest = `${config.dest}/${folder}`;
+    helpers.createDirIfNotExist(dest);
+    fs.writeFileSync(`${dest}/${filename}.html`, html);
   });
 }
 
@@ -133,13 +141,43 @@ function shapeComponentData(component) {
   return data;
 }
 
+function shapeVariantData(variant) {
+  return {
+    name: variant.name,
+    data: variant.data,
+    slug: variant.slug,
+  };
+}
+
+function generateVariantPages(components) {
+  components.map((component) => component.variants.map(
+    (variant) => outputPage(
+      shapeVariantData(variant),
+      variant.slug,
+      'variant',
+      variant.name
+    )
+  ));
+}
+
 function generateSinglePages(components, tabs) {
-  components.map((component) =>
-    outputPage(shapeComponentData(component), component.name, 'single', tabs));
+  components.map((component) => outputPage(
+    shapeComponentData(component),
+    'index',
+    'single',
+    `${component.type}/${component.name}`,
+    tabs
+  ));
 }
 
 function generateIndexPage(components, tabs) {
-  outputPage(components.map((component) => shapeComponentData(component)), 'index', 'all', tabs);
+  outputPage(
+    components.map((component) => shapeComponentData(component)),
+    'index',
+    'all',
+    '',
+    tabs
+  );
 }
 
 function getTabs(types) {
@@ -154,7 +192,7 @@ function getTabs(types) {
           items: type.components.map((component) => ({
             name: component.name,
             label: component.name,
-            path: `${component.name}.html#${type.name}`,
+            path: `/${type.name}/${component.name}/index.html#${type.name}`,
             components: [],
           })),
         },
@@ -191,4 +229,5 @@ export default (settings) => {
   const tabs = getTabs(typesWithComponents);
   generateIndexPage(componentsFromTypes(typesWithComponents), tabs);
   generateSinglePages(componentsFromTypes(typesWithComponents), tabs);
+  generateVariantPages(componentsFromTypes(typesWithComponents));
 };

@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { humanize } from 'underscore.string';
 
 export function removeExt(string) {
   const parts = string.split('.');
@@ -40,9 +39,13 @@ export function dirExists(src) {
 }
 
 export function createDirIfNotExist(src) {
-  if (!dirExists(src)) {
-    fs.mkdirSync(src);
-  }
+  src.split('/').forEach((dir, index, splits) => {
+    const parent = splits.slice(0, index).join('/');
+    const dirPath = path.resolve(parent, dir);
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath);
+    }
+  });
 }
 
 export function getJson(src) {
@@ -68,8 +71,8 @@ export function removePrefix(string) {
   return string;
 }
 
-export function formatVariantHeading(string) {
+export function formatVariantFile(string) {
   const withoutExt = removeExt(string);
   const withoutPrefix = removePrefix(withoutExt);
-  return humanize(withoutPrefix);
+  return withoutPrefix;
 }
