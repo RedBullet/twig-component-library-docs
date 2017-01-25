@@ -31,7 +31,7 @@ function getProperties(src) {
 }
 
 function getVariants(src, name, twig) {
-  const files = helpers.getFiles(src);
+  const files = helpers.getFiles(src, 'json');
   const fileId = helpers.removeExt(name).replace('/', '-');
 
   return files.map((file) => ({

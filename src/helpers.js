@@ -12,9 +12,11 @@ export function getFolders(src) {
     .filter((file) => fs.statSync(path.join(src, file)).isDirectory());
 }
 
-export function getFiles(src) {
+export function getFiles(src, ext) {
   return fs.readdirSync(src)
-    .filter((file) => fs.statSync(path.join(src, file)).isFile());
+    .filter((file) =>
+      fs.statSync(path.join(src, file)).isFile()
+      && path.extname(file) === `.${ext}`);
 }
 
 export function getFile(src) {
@@ -47,7 +49,11 @@ export function getJson(src) {
   const file = getFile(src);
 
   if (file) {
-    return JSON.parse(file); // eslint-disable-line angular/json-functions
+    try {
+      return JSON.parse(file); // eslint-disable-line angular/json-functions
+    } catch(error) {
+      console.error(`Invalid JSON in ${src}`);
+    }
   }
 
   return undefined;
