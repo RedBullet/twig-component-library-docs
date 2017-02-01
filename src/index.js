@@ -7,6 +7,8 @@ import { slugify, humanize } from 'underscore.string';
 
 Twig.cache(false);
 
+Twig.extendFilter('resize', (value) => value);
+
 let config = {
   name: 'Component Library',
   styleguideAssetSrc: `${path.dirname(__filename)}/assets/`,
