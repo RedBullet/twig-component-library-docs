@@ -1,6 +1,6 @@
 {
   "name": "twig-component-library-docs",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "[WIP] Produces docs for Twig Component Library",
   "main": "lib/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-2": "^6.18.0",
     "babelify": "^7.3.0",
+    "browserify": "^14.0.0",
     "closest": "0.0.1",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
