@@ -70,20 +70,22 @@ function testResize() {
 }
 
 export default function init() {
-  const tabTriggers = [...document.querySelectorAll('.sg-tabs__button')];
+  if (document.querySelectorAll('.sg-tabs').length > 0) {
+    const tabTriggers = [...document.querySelectorAll('.sg-tabs__button')];
 
-  if (tabTriggers) {
-    tabTriggers.forEach((item) => {
-      item.addEventListener('click', toggleTab);
-    });
+    if (tabTriggers) {
+      tabTriggers.forEach((item) => {
+        item.addEventListener('click', toggleTab);
+      });
+    }
+
+    const activeTab = document.querySelector(`.sg-tabs__button[href="${location.hash}"]`);
+
+    if (activeTab) {
+      activeTab.click();
+    }
+
+    window.addEventListener('resize', testResize);
+    testResize();
   }
-
-  const activeTab = document.querySelector(`.sg-tabs__button[href="${location.hash}"]`);
-
-  if (activeTab) {
-    activeTab.click();
-  }
-
-  window.addEventListener('resize', testResize);
-  testResize();
 }

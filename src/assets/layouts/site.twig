@@ -2,14 +2,14 @@
 
 {% extends "styleguide::layouts/base.twig" %}
 
-{% block base_content %}
+{% block sg_base_content %}
   <header role="mast-head" class="sg-header">
     {{ component('molecules/sg-menu', site, 'styleguide') }}
   </header>
 
-  {% block site_content %}
+  {% block sg_site_content %}
     <main role="main" class="sg-main">
-      {% block content %}
+      {% block sg_content %}
         Sorry, no content
       {% endblock %}
     </main>

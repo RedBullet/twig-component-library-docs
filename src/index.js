@@ -9,7 +9,7 @@ Twig.cache(false);
 
 let config = {
   name: 'Component Library',
-  assetSrc: `${path.dirname(__filename)}/assets`,
+  styleguideAssetSrc: `${path.dirname(__filename)}/assets/`,
   excludedTypes: ['utils'],
 };
 
@@ -72,13 +72,15 @@ function getComponents(src, type) {
 }
 
 function outputPage(data, filename, template, folder = '', tabs = []) {
-  const templatePath = `${config.assetSrc}/components/templates/${template}/${template}.twig`;
+  const templatePath =
+    `${config.styleguideAssetSrc}/components/templates/${template}/${template}.twig`;
   return Twig.renderFile(templatePath, {
     settings: {
       views: `${config.src}`,
       'twig options': {
         namespaces: {
-          styleguide: `${config.assetSrc}/`,
+          styleguide: `${config.styleguideAssetSrc}`,
+          assets: `${config.assetSrc}`,
         },
       },
     },
@@ -144,7 +146,7 @@ function shapeComponentData(component) {
 function shapeVariantData(variant) {
   return {
     name: variant.name,
-    data: variant.data,
+    data: Object.assign(variant.data, { layout: 'styleguide::layouts/empty.twig' }),
     slug: variant.slug,
   };
 }
