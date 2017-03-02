@@ -13,6 +13,7 @@ let config = {
   name: 'Component Library',
   styleguideAssetSrc: `${path.dirname(__filename)}/assets/`,
   excludedTypes: ['utils'],
+  namespace: 'assets::',
 };
 
 function getProperties(src) {
@@ -148,7 +149,10 @@ function shapeComponentData(component) {
 function shapeVariantData(variant) {
   return {
     name: variant.name,
-    data: Object.assign(variant.data, { layout: 'styleguide::layouts/empty.twig' }),
+    data: Object.assign(variant.data, {
+      layout: 'styleguide::layouts/empty.twig',
+      namespace: config.namespace,
+    }),
     slug: variant.slug,
   };
 }
