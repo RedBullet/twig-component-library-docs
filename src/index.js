@@ -15,6 +15,7 @@ let config = {
   excludedTypes: ['utils'],
   styleguideNamespace: 'styleguide::',
   namespace: 'assets::',
+  layout: 'empty',
 };
 
 function getProperties(src) {
@@ -151,6 +152,7 @@ function shapeVariantData(variant) {
   return {
     name: variant.name,
     data: Object.assign(variant.data, {
+      layout: config.layout,
       namespace: config.namespace,
     }),
     slug: variant.slug,
