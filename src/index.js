@@ -16,6 +16,14 @@ let config = {
   styleguideNamespace: 'styleguide::',
   namespace: 'assets::',
   layout: 'empty',
+  stylesheets: [
+    { href: 'docassets/styles/main.css' },
+    { href: 'assets/styles/main.css' },
+  ],
+  scripts: [
+    { src: 'docassets/scripts/main.js' },
+    { src: 'assets/scripts/main.js' },
+  ],
 };
 
 function getProperties(src) {
@@ -84,8 +92,10 @@ function outputPage(data, filename, template, folder = '', tabs = []) {
       views: `${config.src}`,
       'twig options': {
         namespaces: {
-          styleguide: `${config.styleguideAssetSrc}`,
-          assets: `${config.assetSrc}`,
+          styleguide: config.styleguideAssetSrc,
+          assets: config.assetSrc,
+          scripts: config.scripts,
+          stylesheets: config.stylesheets,
         },
       },
     },
