@@ -17,11 +17,9 @@ let config = {
   namespace: 'assets::',
   layout: 'empty',
   stylesheets: [
-    { href: 'docassets/styles/main.css' },
     { href: 'assets/styles/main.css' },
   ],
   scripts: [
-    { src: 'docassets/scripts/main.js' },
     { src: 'assets/scripts/main.js' },
   ],
 };
@@ -94,8 +92,6 @@ function outputPage(data, filename, template, folder = '', tabs = []) {
         namespaces: {
           styleguide: config.styleguideAssetSrc,
           assets: config.assetSrc,
-          scripts: config.scripts,
-          stylesheets: config.stylesheets,
         },
       },
     },
@@ -103,6 +99,8 @@ function outputPage(data, filename, template, folder = '', tabs = []) {
       name: config.name,
       tabs,
     },
+    scripts: config.scripts,
+    stylesheets: config.stylesheets,
     data,
   }, (err, html) => {
     const dest = `${config.dest}/${folder}`;
