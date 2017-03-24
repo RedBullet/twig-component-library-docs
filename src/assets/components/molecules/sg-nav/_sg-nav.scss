@@ -13,6 +13,7 @@
     border-left: $sg-nav-border-width $border-style $sg-nav-border-color;
     color: $sg-nav-color;
     display: block;
+    font-size: .75em;
     line-height: $line-height;
     padding: $spacing-vertical $spacing-horizontal $spacing-vertical ($spacing-horizontal - $sg-nav-border-width);
     text-decoration: none;
