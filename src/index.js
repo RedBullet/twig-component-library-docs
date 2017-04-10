@@ -8,7 +8,7 @@ import { slugify, humanize } from 'underscore.string';
 Twig.cache(false);
 
 Twig.extendFilter('resize', (value) => value);
-Twig.extendFilter('function', (value) => value);
+Twig.extendFunction('function', (value) => value);
 
 let config = {
   name: 'Component Library',
