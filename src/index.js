@@ -46,7 +46,6 @@ function getProperties(src) {
 
 function getVariants(src, name, twig) {
   const files = helpers.getFiles(src, 'json');
-  const fileId = helpers.removeExt(name).replace('/', '-');
 
   return files.map((file) => ({
     name,
@@ -54,8 +53,8 @@ function getVariants(src, name, twig) {
     data: Object.assign({}, config.data, helpers.getJson(`${src}/${file}`)),
     data_raw: helpers.getFile(`${src}/${file}`),
     twig_raw: twig,
-    file_id: fileId,
-    slug: `${slugify(helpers.formatVariantFile(file))}`,
+    file_id: slugify(helpers.formatVariantFile(file)),
+    slug: slugify(helpers.formatVariantFile(file)),
     isolated_link: `/${name}/${slugify(helpers.formatVariantFile(file))}.html`,
   }));
 }

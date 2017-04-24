@@ -1,23 +1,26 @@
-function closeTabs() {
-  const triggers = [...document.querySelectorAll('.sg-variant__trigger')];
-  const codes = [...document.querySelectorAll('.sg-variant__code')];
+function closeTabs(el) {
+  const triggers = [...el.parentNode.querySelectorAll('.sg-variant__trigger')];
+  const activeCode = document.querySelector(el.getAttribute('href'));
 
-  triggers.forEach((trigger) => {
-    trigger.classList.remove('sg-variant__trigger--active');
-  });
+  if (activeCode) {
+    const codes = [...activeCode.parentNode.querySelectorAll('.sg-variant__code')];
 
-  codes.forEach((code) => {
-    code.classList.remove('sg-variant__code--active');
-  });
+    triggers.forEach((trigger) => {
+      trigger.classList.remove('sg-variant__trigger--active');
+    });
+
+    codes.forEach((code) => {
+      code.classList.remove('sg-variant__code--active');
+    });
+  }
 }
 
-function openTab(trigger) {
-  const codeSelector = trigger.getAttribute('href');
-  const code = document.querySelector(codeSelector);
+function openTab(el) {
+  const code = document.querySelector(el.getAttribute('href'));
 
-  closeTabs();
+  closeTabs(el);
 
-  trigger.classList.add('sg-variant__trigger--active');
+  el.classList.add('sg-variant__trigger--active');
   code.classList.add('sg-variant__code--active');
 }
 
@@ -25,7 +28,7 @@ function toggleCode(e) {
   e.preventDefault();
 
   if (this.classList.contains('sg-variant__trigger--active')) {
-    closeTabs();
+    closeTabs(this);
   } else {
     openTab(this);
   }
