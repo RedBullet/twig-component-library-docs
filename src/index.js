@@ -8,7 +8,7 @@ import { slugify, humanize } from 'underscore.string';
 Twig.cache(false);
 
 Twig.extendFilter('resize', (value) => value);
-Twig.extendFunction('function', (value) => value);
+Twig.extendFunction('function', () => '');
 
 let config = {
   name: 'Component Library',
@@ -16,13 +16,14 @@ let config = {
   excludedTypes: ['utils'],
   styleguideNamespace: 'styleguide::',
   namespace: 'assets::',
-  layout: 'empty',
+  layout: 'styleguide::layouts/empty',
   stylesheets: [
     { href: 'assets/styles/main.css' },
   ],
   scripts: [
     { src: 'assets/scripts/main.js' },
   ],
+  data: {},
 };
 
 function getProperties(src) {
@@ -50,7 +51,7 @@ function getVariants(src, name, twig) {
   return files.map((file) => ({
     name,
     heading: humanize(helpers.formatVariantFile(file)),
-    data: helpers.getJson(`${src}/${file}`),
+    data: Object.assign({}, config.data, helpers.getJson(`${src}/${file}`)),
     data_raw: helpers.getFile(`${src}/${file}`),
     twig_raw: twig,
     file_id: fileId,
@@ -238,6 +239,10 @@ function getTypes(src, excludedTypes = []) {
 
 export default (settings) => {
   config = Object.assign(config, settings);
+
+  if (settings.dataSrc) {
+    config.data = helpers.getJson(settings.dataSrc);
+  }
 
   const types = getTypes(`${config.src}/components`, config.excludedTypes);
   const typesWithComponents = types.map((type) => ({

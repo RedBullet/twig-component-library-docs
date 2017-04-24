@@ -54,12 +54,12 @@ export function getJson(src) {
   if (file) {
     try {
       return JSON.parse(file); // eslint-disable-line angular/json-functions
-    } catch(error) {
-      console.error(`Invalid JSON in ${src}`);
+    } catch (error) {
+      console.error(`Error: Invalid JSON in ${src}`);
     }
   }
 
-  return undefined;
+  return {};
 }
 
 export function removePrefix(string) {
