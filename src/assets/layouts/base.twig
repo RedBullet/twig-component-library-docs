@@ -24,6 +24,7 @@
 {% block sg_base_body %}
 <body class="sg">
   {% block sg_base_content %}{% endblock %}
+  {% block sg_base_scripts_include %}{% endblock %}
   {% block sg_base_scripts %}
     <script src="docassets/scripts/main.js"></script>
     {% if scripts %}
@@ -31,7 +32,6 @@
     <script src="{{ script.src }}"></script>
     {% endfor %}
     {% endif %}
-    {% block sg_base_scripts_include %}{% endblock %}
   {% endblock %}
 </body>
 {% endblock %}

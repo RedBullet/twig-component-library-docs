@@ -5,3 +5,7 @@
 {% block sg_base_content %}
   {{ component(data.name, data.data) }}
 {% endblock %}
+
+{% block sg_base_scripts_include %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.contentWindow.min.js"></script>
+{% endblock %}

@@ -5,7 +5,7 @@
   <a href="{{ isolated_link }}" class="sg-variant__isolated-link" target="_blank">Open isolated</a>
 
   {% if name %}
-    <div class="sg-variant__component">{{ component(name, data) }}</div>
+    <div class="sg-variant__component"><iframe src="{{ isolated_link }}"></iframe></div>
   {% endif %}
 
   {% set parts = name|split('/') %}
