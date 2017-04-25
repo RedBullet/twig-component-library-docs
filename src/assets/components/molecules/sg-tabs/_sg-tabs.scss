@@ -30,7 +30,7 @@
     }
 
     .icon {
-      font-size: 2em;
+      font-size: 1.25em;
       width: auto;
     }
 
@@ -80,6 +80,17 @@
 
     &--active {
       display: block;
+    }
+  }
+
+  &__heading {
+    border-bottom: $sg-tabs-border-width $border-style $sg-tabs-border-color-active;
+    padding: $spacing-vertical-sm ($spacing-horizontal * .75);
+
+    span {
+      font-size: .75em;
+      font-weight: bold;
+      text-transform: capitalize;
     }
   }
 

@@ -157,6 +157,28 @@ function shapeComponentData(component) {
   return data;
 }
 
+function getTabs(types, currentType = false, currentName = false) {
+  return types.map((type) => ({
+    id: type.name,
+    label: type.name,
+    path: `#${type.name}`,
+    components: [
+      {
+        name: 'molecules/sg-nav',
+        data: {
+          items: type.components.map((component) => ({
+            name: component.name,
+            label: component.name,
+            path: `/${type.name}/${component.name}/index.html#${type.name}`,
+            components: [],
+            active: (currentType === type.name && currentName === component.name),
+          })),
+        },
+      },
+    ],
+  }));
+}
+
 function shapeVariantData(variant) {
   return {
     name: variant.name,
@@ -179,13 +201,13 @@ function generateVariantPages(components) {
   ));
 }
 
-function generateSinglePages(components, tabs) {
+function generateSinglePages(components, types) {
   components.map((component) => outputPage(
     shapeComponentData(component),
     'index',
     'single',
     `${component.type}/${component.name}`,
-    tabs
+    getTabs(types, component.type, component.name)
   ));
 }
 
@@ -197,27 +219,6 @@ function generateIndexPage(components, tabs) {
     '',
     tabs
   );
-}
-
-function getTabs(types) {
-  return types.map((type) => ({
-    id: type.name,
-    label: type.name,
-    path: `#${type.name}`,
-    components: [
-      {
-        name: 'molecules/sg-nav',
-        data: {
-          items: type.components.map((component) => ({
-            name: component.name,
-            label: component.name,
-            path: `/${type.name}/${component.name}/index.html#${type.name}`,
-            components: [],
-          })),
-        },
-      },
-    ],
-  }));
 }
 
 function componentsFromTypes(types) {
@@ -249,8 +250,7 @@ export default (settings) => {
     components: getComponents(`${config.src}/components/${type}`, type),
   }));
 
-  const tabs = getTabs(typesWithComponents);
-  generateIndexPage(componentsFromTypes(typesWithComponents), tabs);
-  generateSinglePages(componentsFromTypes(typesWithComponents), tabs);
+  generateIndexPage(componentsFromTypes(typesWithComponents), getTabs(typesWithComponents));
+  generateSinglePages(componentsFromTypes(typesWithComponents), typesWithComponents);
   generateVariantPages(componentsFromTypes(typesWithComponents));
 };

@@ -99,7 +99,7 @@ $sg-menu-logo-font-weight: $heading-font-weight;
 $sg-menu-border: $border-width $border-style $border-color;
 
 // Sidebar width
-$sg-menu-width: 15.37em;
+$sg-menu-width: 12em;
 
 
 // Tab navigation in menu sg-tabs
@@ -121,11 +121,10 @@ $sg-tabs-border-color-active: $border-color;
 
 $sg-nav-color: $color-text-dark;
 $sg-nav-color-active: $color-text-dark;
-
 $sg-nav-border-width: $border-width-lg;
 $sg-nav-border-color: transparent;
-$sg-nav-border-color-active: $color-grey;
-
+$sg-nav-background-active: $color-grey;
+$sg-nav-background-hover: lighten($color-grey, 5%);
 
 // Page header sg-page-header
 // ==================================================

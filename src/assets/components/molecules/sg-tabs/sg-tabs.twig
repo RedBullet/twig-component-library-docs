@@ -14,6 +14,7 @@
   <div class="sg-tabs__content" data-tabs-content>
     {% for tab in tabs %}
       <div data-tabs-pane class="sg-tabs__pane" id="{{ tab.id }}">
+        <div class="sg-tabs__heading"><span>{{ tab.label }}</span></div>
         {% for item in tab.components %}
           {{ component(item.name, item.data, 'styleguide') }}
         {% endfor %}

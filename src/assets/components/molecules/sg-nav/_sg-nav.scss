@@ -5,21 +5,22 @@
     padding: 0;
   }
 
-  &__item {
-    //
-  }
-
   &__link {
     border-left: $sg-nav-border-width $border-style $sg-nav-border-color;
     color: $sg-nav-color;
     display: block;
     font-size: .75em;
     line-height: $line-height;
-    padding: $spacing-vertical $spacing-horizontal $spacing-vertical ($spacing-horizontal - $sg-nav-border-width);
+    padding: $spacing-vertical-sm $spacing-horizontal $spacing-vertical-sm ($spacing-horizontal - $sg-nav-border-width);
     text-decoration: none;
+    transition: background 400ms;
+
+    &:hover {
+      background: $sg-nav-background-hover;
+    }
 
     &--active {
-      border-left-color: $sg-nav-border-color-active;
+      background: $sg-nav-background-active;
       color: $sg-nav-color-active;
     }
   }

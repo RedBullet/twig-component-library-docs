@@ -2,7 +2,7 @@
   background: $sg-menu-background;
   border-bottom: $sg-menu-border;
   font-family: $body-font-family;
-  padding: $spacing-vertical $spacing-horizontal;
+  padding: ($spacing-vertical * .68) $spacing-horizontal;
 
   &__logo {
     color: $sg-menu-logo-color;
@@ -13,6 +13,10 @@
     margin: 0;
     padding: 0;
     text-transform: capitalize;
+
+    a {
+      font-size: .75em;
+    }
   }
 
   &__link {
