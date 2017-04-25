@@ -3,7 +3,7 @@
 {% extends "styleguide::layouts/site.twig" %}
 
 {% block sg_content %}
-  {% for item in data %}
-    {{ component('organisms/sg-component', item, 'styleguide') }}
-  {% endfor %}
+  <div class="sg-section sg-section--docs">
+    {{ component('molecules/sg-text', data, 'styleguide') }}
+  </div>
 {% endblock %}

@@ -8,7 +8,11 @@
     <title>{{ site.name }}</title>
     <base href="/">
     {% block sg_base_stylesheets %}
-      <link rel="stylesheet" href="docassets/styles/main.css" type="text/css" media="screen" />
+      {% if stylesheets %}
+      {% for stylesheet in stylesheets %}
+        <link rel="stylesheet" href="{{ stylesheet.href }}" type="text/css" media="screen" />
+      {% endfor %}
+      {% endif %}
       {% block sg_base_stylesheets_include %}{% endblock %}
     {% endblock %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -17,11 +21,15 @@
 </head>
 {% endblock %}
 {% block sg_base_body %}
-<body class="sg">
+<body>
   {% block sg_base_content %}{% endblock %}
   {% block sg_base_scripts_include %}{% endblock %}
   {% block sg_base_scripts %}
-    <script src="docassets/scripts/main.js"></script>
+    {% if scripts %}
+    {% for script in scripts %}
+    <script src="{{ script.src }}"></script>
+    {% endfor %}
+    {% endif %}
   {% endblock %}
 </body>
 {% endblock %}

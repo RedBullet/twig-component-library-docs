@@ -1,4 +1,4 @@
-# Twig Component Library User Guide
+# Component Library User Guide
 
 Mauris auctor interdum lorem, eget maximus lectus bibendum nec. Sed tincidunt, tortor vel sodales pharetra, erat massa laoreet nibh, ac tempor tellus magna eget justo.
 

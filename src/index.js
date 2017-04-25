@@ -213,9 +213,11 @@ function generateSinglePages(components, types) {
 
 function generateIndexPage(components, tabs) {
   outputPage(
-    components.map((component) => shapeComponentData(component)),
+    {
+      text: getDocs(`${path.dirname(__filename)}/../docs/Readme.md`),
+    },
     'index',
-    'all',
+    'home',
     '',
     tabs
   );

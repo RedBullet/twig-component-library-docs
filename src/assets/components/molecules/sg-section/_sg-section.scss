@@ -9,4 +9,9 @@
     font-weight: $heading-font-weight;
     margin: 0 0 $spacing-vertical;
   }
+
+  &--docs {
+    font-size: .75em;
+    max-width: 60em;
+  }
 }

@@ -39,6 +39,15 @@ $body-background: $color-background-light;
 $body-color: $color-text-dark;
 $heading-color: $color-text-dark;
 
+$brand-primary: $color-grey;
+$brand-secondary: $color-green;
+
+// Transitions
+// ==================================================
+
+$transition-duration: 200ms !default;
+$transition-timing: ease !default;
+
 // Borders
 // ==================================================
 
@@ -66,13 +75,42 @@ $bp: (
 $font-family-sans-serif: 'Open Sans', sans-serif;
 $font-family-serif: serif;
 
+$font-family: $font-family-sans-serif;
 $heading-font-family: $font-family-sans-serif;
 $body-font-family: $font-family-sans-serif;
 
+$font-size: 1.25em;
 $line-height: 1.5;
 $heading-line-height: 1.1;
-
 $heading-font-weight: 600;
+
+$selection-color: $brand-primary;
+
+// Headings
+// ==================================================
+
+$h1-font-size: 2.5em !default;
+$h2-font-size: 1.75em !default;
+$h3-font-size: 1.25em !default;
+$h4-font-size: 1em !default;
+$h5-font-size: .9em !default;
+$h6-font-size: .75em !default;
+
+$heading-color: $color-black !default;
+$heading-font-family: $font-family-sans-serif !default;
+$heading-font-weight: 600 !default;
+$heading-line-height: 1.5 !default;
+
+// Links
+// ==================================================
+
+$link-color: $body-color !default;
+$link-active-color: lighten($body-color, 15%) !default;
+$link-focus-color: lighten($body-color, 15%) !default;
+$link-hover-color: lighten($body-color, 15%) !default;
+
+$link-decoration: underline !default;
+$link-hover-decoration: inherit !default;
 
 // Spacing
 // ==================================================
