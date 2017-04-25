@@ -1,6 +1,6 @@
 {
   "name": "twig-component-library-docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "[WIP] Produces docs for Twig Component Library",
   "main": "lib/index.js",
   "scripts": {
@@ -42,12 +42,10 @@
     "rimraf": "^2.5.4",
     "twig": "^0.10.3",
     "underscore.string": "^3.3.4",
-    "validate-commit-msg": "^2.6.1"
+    "validate-commit-msg": "^2.6.1",
+    "iframe-resizer": "^3.5.14"
   },
   "engines": {
     "node": ">=6.3.0"
-  },
-  "dependencies": {
-    "iframe-resizer": "^3.5.14"
   }
 }
