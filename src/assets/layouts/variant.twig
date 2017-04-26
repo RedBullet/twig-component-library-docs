@@ -1,6 +1,6 @@
 <!doctype html>
 {% block sg_base_html %}
-<html class="no-js">
+<html>
 {% endblock %}
 {% block sg_base_head %}
 <head>
@@ -23,6 +23,7 @@
 {% block sg_base_body %}
 <body>
   {% block sg_base_content %}{% endblock %}
+  <div style="clear: both" data-iframe-height></div>
   {% block sg_base_scripts_include %}{% endblock %}
   {% block sg_base_scripts %}
     {% if scripts %}

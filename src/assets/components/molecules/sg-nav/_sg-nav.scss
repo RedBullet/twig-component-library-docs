@@ -1,8 +1,20 @@
 .sg-nav {
   &__list {
+    background: $color-white;
+    border-bottom: $sg-menu-border;
     list-style-type: none;
     margin: 0;
+    max-height: 13em;
+    overflow-y: auto;
     padding: 0;
+    position: absolute;
+    width: 100%;
+
+    @media (min-width: map-get($bp, 'md')) {
+      border-bottom: 0;
+      height: calc(100% - 9.8em);
+      max-height: none;
+    }
   }
 
   &__link {

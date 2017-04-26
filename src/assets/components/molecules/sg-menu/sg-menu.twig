@@ -1,9 +1,11 @@
 {% from "styleguide::components/utils/component.twig" import component %}
 
 <div class="sg-menu">
-  <div class="sg-menu__logo"><a class="sg-menu__link" href="/">{{ name }}</a></div>
+  <div class="sg-menu__inner">
+    <div class="sg-menu__logo"><a class="sg-menu__link" href="/">{{ name }}</a></div>
 
-  <nav role="navigation">
-    {{ component('molecules/sg-tabs', {tabs: tabs}, 'styleguide') }}
-  </nav>
+    <nav role="navigation">
+      {{ component('molecules/sg-tabs', {tabs: tabs}, 'styleguide') }}
+    </nav>
+  </div>
 </div>

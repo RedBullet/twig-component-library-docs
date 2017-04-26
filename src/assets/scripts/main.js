@@ -14,4 +14,7 @@ codeHighlight();
 sgVariant();
 isolated();
 
-iFrameResize({ log: false }, '.sg-variant__component iframe');
+iFrameResize({
+  log: false,
+  heightCalculationMethod: 'taggedElement',
+}, '.sg-variant__component iframe');

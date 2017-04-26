@@ -84,7 +84,7 @@
   }
 
   &__heading {
-    border-bottom: $sg-tabs-border-width $border-style $sg-tabs-border-color-active;
+    border-bottom: $sg-menu-border;
     padding: $spacing-vertical-sm ($spacing-horizontal * .75);
 
     span {
@@ -106,6 +106,7 @@
   }
 
   @media (min-width: map-get($bp, 'md')) {
+    min-height: 20em;
     position: static;
   }
 }
