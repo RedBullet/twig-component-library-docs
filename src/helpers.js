@@ -30,6 +30,14 @@ export function getFile(src) {
   return file;
 }
 
+export function convertJsonToPhpString(src) {
+  let string = getFile(src);
+  string = string.replace(/{/g, '[');
+  string = string.replace(/}/g, ']');
+  string = string.replace(/":/g, '" =>');
+  return string;
+}
+
 export function dirExists(src) {
   try {
     return fs.statSync(src).isDirectory();

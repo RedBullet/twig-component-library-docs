@@ -52,6 +52,7 @@ function getVariants(src, name, twig) {
     heading: humanize(helpers.formatVariantFile(file)),
     data: Object.assign({}, config.data, helpers.getJson(`${src}/${file}`)),
     data_raw: helpers.getFile(`${src}/${file}`),
+    php_data_raw: helpers.convertJsonToPhpString(`${src}/${file}`),
     twig_raw: twig,
     file_id: slugify(helpers.formatVariantFile(file)),
     slug: slugify(helpers.formatVariantFile(file)),
