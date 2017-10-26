@@ -7,15 +7,26 @@ import { slugify, humanize } from 'underscore.string';
 
 Twig.cache(false);
 
-Twig.extendFilter('resize', (value) => value);
-Twig.extendFunction('function', () => '');
-
 let config = {
   name: 'Component Library',
   styleguideAssetSrc: `${path.dirname(__filename)}/assets/`,
   excludedTypes: ['utils'],
   styleguideNamespace: 'styleguide::',
   namespace: 'assets::',
+  twig: {
+    filters: [
+      {
+        name: 'resize',
+        function: (value) => value,
+      },
+    ],
+    functions: [
+      {
+        name: 'function',
+        function: () => '',
+      },
+    ],
+  },
   layout: 'styleguide::layouts/empty',
   stylesheets: [
     { href: 'assets/styles/main.css' },
@@ -239,11 +250,31 @@ function getTypes(src, excludedTypes = []) {
   return types.filter((type) => excludedTypes.find((excludedType) => excludedType !== type));
 }
 
+function setTwigFilters(filters) {
+  filters.forEach((f) => {
+    Twig.extendFilter(f.name, f.function);
+  });
+}
+
+function setTwigFunctions(functions) {
+  functions.forEach((f) => {
+    Twig.extendFunction(f.name, f.function);
+  });
+}
+
 export default (settings) => {
   config = Object.assign(config, settings);
 
   if (settings.dataSrc) {
     config.data = helpers.getJson(settings.dataSrc);
+  }
+
+  if (config.hasOwnProperty('twig') && config.twig.hasOwnProperty('filters')) {
+    setTwigFilters(config.twig.filters);
+  }
+
+  if (config.hasOwnProperty('twig') && config.twig.hasOwnProperty('functions')) {
+    setTwigFunctions(config.twig.functions);
   }
 
   const types = getTypes(`${config.src}/components`, config.excludedTypes);
