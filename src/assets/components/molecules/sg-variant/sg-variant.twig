@@ -15,11 +15,15 @@
   <div class="sg-variant__code sg-variant__code--twig" id="variant-twig-{{ file_id }}">
 <pre><code class="twig">{% filter escape %}{{ twig_raw }}{% endfilter %}</code></pre>
   </div>
+  <div class="sg-variant__code sg-variant__code--php" id="variant-php-{{ file_id }}">
+<pre><code class="php">{% filter escape %}{{ php_data_raw }}{% endfilter %}</code></pre>
+  </div>
   <div class="sg-variant__code sg-variant__code--json" id="variant-json-{{ file_id }}">
 <pre><code class="json">{% filter escape %}{{ data_raw }}{% endfilter %}</code></pre>
   </div>
   <a href="{{ isolated_link }}" target="_blank" class="sg-variant__isolated">Isolated</a>
   <a href="#variant-twig-{{ file_id }}" class="sg-variant__trigger">Twig</a>
   <a href="#variant-html-{{ file_id }}" class="sg-variant__trigger">HTML</a>
-  <a href="#variant-json-{{ file_id }}" class="sg-variant__trigger">Data</a>
+  <a href="#variant-php-{{ file_id }}" class="sg-variant__trigger">PHP Data</a>
+  <a href="#variant-json-{{ file_id }}" class="sg-variant__trigger">JSON Data</a>
 </div>
