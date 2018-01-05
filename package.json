@@ -1,6 +1,6 @@
 {
   "name": "twig-component-library-docs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "[WIP] Produces docs for Twig Component Library",
   "main": "lib/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "browserify": "^14.0.0",
     "classlist-polyfill": "^1.0.3",
     "closest": "0.0.1",
+    "core-js": "^2.5.3",
     "element-closest": "^2.0.2",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
@@ -36,14 +37,14 @@
     "eslint-plugin-react": "^5.0.1",
     "event-stream": "^3.3.2",
     "highlight.js": "^9.6.0",
+    "iframe-resizer": "^3.5.14",
     "lodash": "^4.0.1",
     "marked": "^0.3.6",
     "node-sass": "^4.1.1",
     "rimraf": "^2.5.4",
     "twig": "^0.10.3",
     "underscore.string": "^3.3.4",
-    "validate-commit-msg": "^2.6.1",
-    "iframe-resizer": "^3.5.14"
+    "validate-commit-msg": "^2.6.1"
   },
   "engines": {
     "node": ">=6.3.0"

@@ -10,7 +10,7 @@
     {% block sg_base_stylesheets %}
       {% if stylesheets %}
       {% for stylesheet in stylesheets %}
-        <link rel="stylesheet" href="{{ stylesheet.href }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ stylesheet.href }}" type="text/css" media="all" />
       {% endfor %}
       {% endif %}
       {% block sg_base_stylesheets_include %}{% endblock %}
